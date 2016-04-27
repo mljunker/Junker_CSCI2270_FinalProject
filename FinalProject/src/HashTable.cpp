@@ -1,6 +1,7 @@
 #include "HashTable.h"
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 HashTable::HashTable()
 {
@@ -24,6 +25,7 @@ int HashTable::hashSum(std::string x, int s){
     int num = sum%s;
     return num;
 }
+
 void HashTable::insertWord(std::string word){
     if(word != " " && word != "\n"&& word != ""){
 
@@ -210,4 +212,32 @@ void HashTable::deleteWord(std::string word){
         }
     }
 
+}
+int HashTable::wordcount(){
+    int count = 0;
+    for(int i = 0; i < tableSize; i++){
+        if(hashTable[i]!=NULL){
+            count++;
+            HashElem *temp = hashTable[i];
+            while(temp->next != NULL){
+                count++;
+                temp = temp->next;
+            }
+        }
+    }
+    return count;
+}
+int HashTable::totalwords(){
+    int count = 0;
+    for(int i = 0; i < tableSize; i++){
+        if(hashTable[i]!=NULL){
+            HashElem *temp = hashTable[i];
+            count = count + temp->number;
+            while(temp->next != NULL){
+                count= count + temp->number;
+                temp = temp->next;
+            }
+        }
+    }
+    return count;
 }
