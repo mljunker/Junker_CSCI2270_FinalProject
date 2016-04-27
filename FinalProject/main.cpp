@@ -23,15 +23,16 @@ int main()
     int input = 0 ;
     //menu
 
-    while(input != 7){
+    while(input != 8){
         cout << "======Main Menu======" << endl;
         cout << "1. Build Table" << endl;
         cout << "2. Most Common Words" << endl;
         cout << "3. Find Frequency" << endl;
         cout << "4. Print Table"<<endl;
-        cout << "5. Delete Word" << endl;
-        cout << "6. Specs"<<endl;
-        cout << "7. Quit" << endl;
+        cout << "5. Print Chain at Index"<<endl;
+        cout << "6. Delete Word" << endl;
+        cout << "7. Specs"<<endl;
+        cout << "8. Quit" << endl;
         //make sure input is in right format
         string temp;
         getline(cin,temp);
@@ -67,15 +68,29 @@ int main()
             h.printTableContents();
         }
         if(input == 5){
+            int num;
+            cout << "Which index do you want?:" << endl;
+            getline(cin,temp);
+            num = atoi(temp.c_str());
+            if(num>=0&&num<100){
+                h.printIndex(num);
+            }
+            else{
+                cout<<"Not a valid index number"<<endl;
+            }
+        }
+        if(input == 6){
             cout << "What word do you want to remove?:" << endl;
             getline(cin,temp);
             h.deleteWord(temp);
         }
-        if(input == 6){
+        if(input == 7){
             int count = h.wordcount();
             cout << "Individual words: "<< count << endl;
             count = h.totalwords();
             cout << "Total words: "<< count << endl;
+            count = h.singularwords();
+            cout << "Words used only once: "<<count<<endl;
         }
 
     }
