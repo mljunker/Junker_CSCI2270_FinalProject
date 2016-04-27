@@ -20,6 +20,11 @@ struct HashElem{
 
 };
 
+struct wordinfo{
+    std::string word;
+    int number;
+};
+
 class HashTable
 {
 	public:
@@ -29,6 +34,8 @@ class HashTable
 		void insertWord(std::string word);
 		void deleteWord(std::string word);
 		void findWord(std::string word);
+		void commonWords(int num);
+		void sortarray(wordinfo mostcommon[],int num);
 	private:
 		int hashSum(std::string x, int s);
 		int tableSize = 100;

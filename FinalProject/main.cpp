@@ -26,10 +26,10 @@ int main()
     while(input != 6){
         cout << "======Main Menu======" << endl;
         cout << "1. Build Table" << endl;
-        cout << "2. Most Common Word" << endl;
+        cout << "2. Most Common Words" << endl;
         cout << "3. Find Frequency" << endl;
-        cout << "4. Remove Common Words"<<endl;
-        cout << "5. Specs" << endl;
+        cout << "4. Print Table"<<endl;
+        cout << "5. Delete Word" << endl;
         cout << "6. Quit" << endl;
         //make sure input is in right format
         string temp;
@@ -48,13 +48,26 @@ int main()
             }
         }
         if(input == 2){
-            h.printTableContents();
+            int num;
+            cout << "How many top words do you want?:" << endl;
+            getline(cin,temp);
+            num = atoi(temp.c_str());
+            h.commonWords(num);
+
         }
         if(input == 3){
+            cout << "What word are you looking for?:" << endl;
+            getline(cin,temp);
+            h.findWord(temp);
 
         }
         if(input == 4){
-
+            h.printTableContents();
+        }
+        if(input == 5){
+            cout << "What word do you want to remove?:" << endl;
+            getline(cin,temp);
+            h.deleteWord(temp);
         }
 
 
