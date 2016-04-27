@@ -1,3 +1,4 @@
 # Junker_CSCI2270_FinalProject
-This will be a kingdom building game using a tree to store each location in a way that represents its location relative to the other known locations.
-Operations on the tree will include adding a node by conquering a new location, deleting a node by losing a location, and printing all conquered locations to asses the extent of the kingdom.
+This is a mashup of Assignment 2 and Assignment 12 Hash tables are a more effiecient storage device for long passages as array doubling takes up a large ammount of dynamic memory without using all of it.
+All of the functions of Assignment 12 are put into play. The menu also allows retrieval of the same information collected in Assignment 2. Hash table size has been increased to 100.  Common indices are dealt with by chaining.
+An array of strings sorted by bubble algorithm is used to sort the most commonly occuring words.
